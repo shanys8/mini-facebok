@@ -1,0 +1,26 @@
+
+<p>
+  <h1>Status:</h1>
+  <%= @status.text %>
+</p>
+
+<h2>Comments:</h2>
+<% @status.comments.each do |comment| %>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@status, @status.comments.build]) do |f| %>
+  <p>
+    <%= f.text_area :body, :size => "50", :placeholder => "Enter comment here..."%>
+  </p>
+  <p>
+    <%= f.submit :value => "Add"%>
+  </p>
+<% end %>
+
+<%= link_to 'Back', statuses_path %>
+<%= link_to 'Edit', edit_status_path(@status) %>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MiniFacebookApp</title>
+  <link href='http://railsgirls.co.il/bootstrap/css/bootstrap.css' rel='stylesheet'>
+  <link href='http://railsgirls.co.il/bootstrap/css/bootstrap-theme.css' rel='stylesheet'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class='navbar navbar-default navbar-fixed-top'>
+  <div class='container'>
+    <a class='navbar-brand' href='/'>The Mini Facebook app</a>
+    <ul class='nav navbar-nav'>
+      <li class='active'>
+        <a href='/statuses'>Statuses</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class='container'>
+  <%= yield %>
+</div>
+
+<footer>
+  <div class='container'>
+    Mini Facebook by Shany 2014
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<%= form_for @status do |f| %>
+  <% if @status.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@status.errors.count, "error") %> prohibited
+      this status from being saved:</h2>
+    <ul>
+    <% @status.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p>
+     <table>
+      <tr>
+        <td><%= f.text_area :text, :size => "50", :placeholder => "what's on your mind?"%></td>
+        <td align:center><%= f.submit :value => "Add"%></td>
+      </tr>
+    </table>
+  </p>
+ 
+  
+<% end %>
